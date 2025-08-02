@@ -1,0 +1,111 @@
+    {% extends '_base.html' %}
+    {% load static %}
+
+    {% block title %}{{ image.title }} - Gallery - Chepkungurwet Foundation{% endblock %}
+
+    {% block content %}
+
+    <!-- Message Section -->
+    {% include '_messages.html' %}
+
+    <!-- Hero Section -->
+    <section class="relative py-16 bg-primary-dark text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">Gallery: {{ image.title }}</h1>
+            <div class="w-20 h-1 bg-primary-medium mx-auto mb-6"></div>
+            <p class="text-lg max-w-3xl mx-auto">
+                {{ image.description|truncatewords:20 }}
+            </p>
+        </div>
+    </section>
+
+    <!-- Image Detail -->
+    <section class="py-16 bg-background-light">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="md:w-1/2">
+                            <img 
+                                src="{{ image.image.url }}" 
+                                alt="{{ image.title }}" 
+                                class="w-full h-auto rounded-lg shadow-md"
+                            >
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="mb-6">
+                                <span class="inline-block py-1 px-3 mb-3 text-sm font-semibold tracking-wider bg-primary-light text-primary-dark rounded-full">
+                                    {{ image.get_category_display }}
+                                </span>
+                                <h2 class="text-2xl font-bold text-primary-dark mb-2">{{ image.title }}</h2>
+                                <div class="flex items-center text-gray-600 mb-3">
+                                    <i class="fas fa-calendar-alt mr-2"></i>
+                                    <span>{{ image.date_taken|date:"F j, Y" }}</span>
+                                    <i class="fas fa-map-marker-alt ml-4 mr-2"></i>
+                                    <span>{{ image.location }}</span>
+                                </div>
+                                <p class="text-gray-700 leading-relaxed">
+                                    {{ image.description }}
+                                </p>
+                            </div>
+                            
+                            <div class="border-t pt-4">
+                                <h3 class="font-bold text-lg text-primary-dark mb-3">Share This Image</h3>
+                                <div class="flex space-x-3">
+                                    <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">
+                                        <i class="fab fa-facebook-square text-xl"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-600 hover:text-blue-400 transition-colors">
+                                        <i class="fab fa-twitter-square text-xl"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-600 hover:text-pink-600 transition-colors">
+                                        <i class="fab fa-instagram-square text-xl"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">
+                                        <i class="fab fa-pinterest-square text-xl"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Images -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-primary-dark mb-12">Related Images</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                {% for related in related_images %}
+                <a href="{{ related.get_absolute_url }}" class="group">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg h-56">
+                        <img 
+                            src="{{ related.image.url }}" 
+                            alt="{{ related.title }}" 
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        >
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end p-4">
+                            <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-white font-bold">{{ related.title }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Gallery -->
+    <section class="py-12 bg-background-light">
+        <div class="container mx-auto px-4 text-center">
+            <a href="{% url 'gallery' %}" class="inline-flex items-center text-primary-medium hover:text-primary-dark font-bold text-lg transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Back to Gallery
+            </a>
+        </div>
+    </section>
+    {% endblock %}

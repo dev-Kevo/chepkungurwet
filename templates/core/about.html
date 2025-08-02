@@ -1,0 +1,328 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}About Us - Chepkungurwet Foundation{% endblock %}
+
+{% block content %}
+
+<!-- Message Section -->
+{% include '_messages.html' %}
+
+<!-- Hero Section -->
+<section class="relative py-20 bg-primary-dark text-white">
+    <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Story</h1>
+        <div class="w-24 h-1 bg-primary-medium mx-auto mb-6"></div>
+        <p class="text-xl max-w-3xl mx-auto">
+            Empowering rural communities through sustainable development since 2024.
+        </p>
+    </div>
+</section>
+
+<!-- Who We Are Section with Video -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2">
+                <!-- Video Embed -->
+                <div class="relative pb-[56.25%] h-0 rounded-xl overflow-hidden shadow-lg">
+                    <iframe class="absolute top-0 left-0 w-full h-full" 
+                            src="{% static 'video/intro.mp4' %}" 
+                            title="About Chepkungurwet Foundation" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="text-center text-sm text-gray-500 mt-2">Watch our story: Who we are and what we do</p>
+            </div>
+            <div class="lg:w-1/2">
+                <span class="inline-block py-1 px-3 mb-4 text-sm font-semibold tracking-wider text-primary-medium bg-primary-light bg-opacity-30 rounded-full">
+                    WHO WE ARE
+                </span>
+                <h2 class="text-3xl font-bold text-primary-dark mb-6">Chepkungurwet Foundation</h2>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    A grassroots organization committed to empowering women, children/youth, and families across Kenya. We focus on holistic, community-driven solutions that uplift lives and restore dignity.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-primary-light text-primary-dark p-2 rounded-lg mr-4">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-primary-dark mb-1">Economic Empowerment</h3>
+                            <p class="text-gray-700">Supporting income-generating activities and financial literacy for women and youth.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary-light text-primary-dark p-2 rounded-lg mr-4">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-primary-dark mb-1">School Mentorship & Education</h3>
+                            <p class="text-gray-700">Promoting access to education, life skills, and mentorship for vulnerable students.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary-light text-primary-dark p-2 rounded-lg mr-4">
+                            <i class="fas fa-female"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-primary-dark mb-1">Menstrual Hygiene Awareness</h3>
+                            <p class="text-gray-700">Breaking stigma through menstrual health education and pad distribution.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary-light text-primary-dark p-2 rounded-lg mr-4">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-primary-dark mb-1">Decent Housing & Sanitation</h3>
+                            <p class="text-gray-700">Enhancing living conditions through improved shelter and hygiene infrastructure.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 p-4 bg-background-light rounded-lg border-l-4 border-primary-medium">
+                    <p class="text-gray-700 italic">
+                        "We believe that sustainable change begins at the community level—by equipping individuals with the tools, knowledge, and support they need to thrive."
+                    </p>
+                    <p class="mt-2 font-bold text-primary-dark">
+                        Transforming lives. Restoring dignity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission Section -->
+<section class="py-16 bg-background-light">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2">
+                <img src="{% static 'images/gals.jpg' %}" alt="Community members" class="rounded-xl shadow-lg w-full">
+            </div>
+            <div class="lg:w-1/2">
+                <span class="inline-block py-1 px-3 mb-4 text-sm font-semibold tracking-wider text-primary-medium bg-primary-light bg-opacity-30 rounded-full">
+                    OUR MISSION
+                </span>
+                <h2 class="text-3xl font-bold text-primary-dark mb-6">Creating Lasting Change</h2>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    Chepkungurwet Foundation is dedicated to the holistic transformation of rural families and communities through sustainable development initiatives that address economic, social, and environmental challenges.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-primary-light text-primary-dark p-2 rounded-lg mr-4">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-primary-dark mb-1">Our Vision</h3>
+                            <p class="text-gray-700">A world where every rural community has the resources and knowledge to thrive sustainably.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary-light text-primary-dark p-2 rounded-lg mr-4">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-primary-dark mb-1">Our Approach</h3>
+                            <p class="text-gray-700">Community-led development that empowers local residents to be agents of their own transformation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- History Timeline -->
+{% comment %} <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <span class="inline-block py-1 px-3 mb-4 text-sm font-semibold tracking-wider text-primary-medium bg-primary-light bg-opacity-30 rounded-full">
+                OUR JOURNEY
+            </span>
+            <h2 class="text-3xl font-bold text-primary-dark">Milestones & Achievements</h2>
+            <div class="w-24 h-1 bg-primary-medium mx-auto mt-4"></div>
+        </div>
+
+        <div class="relative max-w-3xl mx-auto">
+            <!-- Timeline line -->
+            <div class="absolute left-1/2 w-1 h-full bg-primary-light transform -translate-x-1/2"></div>
+            
+            <!-- Timeline Item 1 -->
+            <div class="mb-12 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold text-primary-dark">2010: Foundation Established</h3>
+                    <p class="text-gray-700">Founded by a group of local leaders to address poverty in rural Kenya.</p>
+                </div>
+                <div class="md:w-1/2 md:pl-12 relative">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 md:translate-x-0 md:left-0 w-6 h-6 bg-primary-medium rounded-full border-4 border-white shadow-md"></div>
+                    <div class="ml-8 md:ml-0">
+                        <img src="{% static 'images/timeline-2010.jpg' %}" alt="Foundation established" class="rounded-lg shadow-md w-full h-48 object-cover">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 2 -->
+            <div class="mb-12 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 md:pr-12 order-1 md:order-none relative">
+                    <div class="absolute right-1/2 transform translate-x-1/2 md:translate-x-0 md:right-0 w-6 h-6 bg-primary-medium rounded-full border-4 border-white shadow-md"></div>
+                    <div class="mr-8 md:mr-0">
+                        <img src="{% static 'images/timeline-2013.jpg' %}" alt="First school built" class="rounded-lg shadow-md w-full h-48 object-cover">
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12 mb-4 md:mb-0 order-none md:order-1">
+                    <h3 class="text-xl font-bold text-primary-dark">2013: First School Built</h3>
+                    <p class="text-gray-700">Constructed our first primary school serving 150 children in Chepkungurwet village.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 3 -->
+            <div class="mb-12 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold text-primary-dark">2016: Economic Empowerment Launch</h3>
+                    <p class="text-gray-700">Started microfinance program helping 50 women start businesses.</p>
+                </div>
+                <div class="md:w-1/2 md:pl-12 relative">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 md:translate-x-0 md:left-0 w-6 h-6 bg-primary-medium rounded-full border-4 border-white shadow-md"></div>
+                    <div class="ml-8 md:ml-0">
+                        <img src="{% static 'images/timeline-2016.jpg' %}" alt="Economic empowerment launch" class="rounded-lg shadow-md w-full h-48 object-cover">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 4 -->
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 md:pr-12 order-1 md:order-none relative">
+                    <div class="absolute right-1/2 transform translate-x-1/2 md:translate-x-0 md:right-0 w-6 h-6 bg-primary-medium rounded-full border-4 border-white shadow-md"></div>
+                    <div class="mr-8 md:mr-0">
+                        <img src="{% static 'images/timeline-2020.jpg' %}" alt="COVID-19 response" class="rounded-lg shadow-md w-full h-48 object-cover">
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12 mb-4 md:mb-0 order-none md:order-1">
+                    <h3 class="text-xl font-bold text-primary-dark">2020: COVID-19 Response</h3>
+                    <p class="text-gray-700">Distributed emergency food and hygiene supplies to 500 families during pandemic.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> {% endcomment %}
+
+<!-- Team Section -->
+<section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <span class="inline-block py-1 px-3 mb-4 text-sm font-semibold tracking-wider text-primary-medium bg-primary-light bg-opacity-30 rounded-full">
+                OUR TEAM
+            </span>
+            <h2 class="text-3xl font-bold text-primary-dark">Meet the Leadership</h2>
+            <div class="w-24 h-1 bg-primary-medium mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Team Member 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                <img src="{% static 'images/team/director.jpg' %}" alt="Founder" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary-dark mb-1">Freshia Langat</h3>
+                    <p class="text-primary-medium mb-3">Founder & Executive Director</p>
+                    <p class="text-gray-700 text-sm">With over 9 years in community development, Freshia leads our strategic vision, overseeing governance, programs, fundraising, finance, team management, partner communication, and MEL.</p>
+                    {% comment %} <div class="flex space-x-3 mt-4">
+                        <a href="#" class="text-primary-dark hover:text-primary-medium transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-primary-dark hover:text-primary-medium transition-colors">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+            
+            <!-- Team Member 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                <img src="{% static 'images/team/vera.jpg' %}" alt="Program Director" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary-dark mb-1">Vera Atieno</h3>
+                    <p class="text-primary-medium mb-3">Programs Director</p>
+                    <p class="text-gray-700 text-sm">Oversees all community programs with expertise in rural development.</p>
+                    {% comment %} <div class="flex space-x-3 mt-4">
+                        <a href="#" class="text-primary-dark hover:text-primary-medium transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-primary-dark hover:text-primary-medium transition-colors">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+            
+            <!-- Team Member 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                <img src="{% static 'images/team/peter.jpg' %}" alt="Education Coordinator" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary-dark mb-1">Peter Dunga</h3>
+                    <p class="text-primary-medium mb-3">Secretary</p>
+                    <p class="text-gray-700 text-sm">Experienced coordinator who manages schedules, documents, and communication with precision and professionalism.</p>
+                    {% comment %} <div class="flex space-x-3 mt-4">
+                        <a href="#" class="text-primary-dark hover:text-primary-medium transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-primary-dark hover:text-primary-medium transition-colors">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="{% url 'contact' %}" class="inline-block bg-primary-medium hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-lg transition-colors">
+                Contact Our Team
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Partners Section -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <span class="inline-block py-1 px-3 mb-4 text-sm font-semibold tracking-wider text-primary-medium bg-primary-light bg-opacity-30 rounded-full">
+                OUR PARTNERS
+            </span>
+            <h2 class="text-3xl font-bold text-primary-dark">Collaborating for Greater Impact</h2>
+            <div class="w-24 h-1 bg-primary-medium mx-auto mt-4"></div>
+        </div>
+
+        <div class="flex flex-wrap justify-center items-center gap-12">
+            <a href="https://girlup.org/" target="_blank">
+                <img src="{% static 'images/partners/girls_up.png' %}" alt="Partner 1" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity">
+            </a>
+
+            <a href="https://kenyaworks.com/" target="_blank">
+                <img src="{% static 'images/partners/kenya_works.png' %}" alt="Partner 2" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity">
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 bg-primary-dark text-white">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6">Join Our Mission</h2>
+        <p class="text-xl mb-8 max-w-3xl mx-auto">
+            Whether through donations, volunteering, or partnerships, you can help us create lasting change in rural communities.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="{% url 'donate' %}" class="bg-primary-medium hover:bg-primary-light text-background-light font-bold py-3 px-8 rounded-lg transition-colors">
+                Donate Now
+            </a>
+            <a href="{% url 'contact' %}" class="bg-transparent hover:bg-primary-medium text-white font-bold py-3 px-8 border-2 border-white rounded-lg transition-colors">
+                Get Involved
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

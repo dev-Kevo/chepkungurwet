@@ -1,0 +1,507 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}Our Programs - Chepkungurwet Foundation{% endblock %}
+
+{% block content %}
+
+<!-- Message Section -->
+{% include '_messages.html' %}
+
+<!-- Hero Section -->
+<section class="relative py-20 bg-primary-dark text-white">
+    <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Impactful Programs</h1>
+        <div class="w-24 h-1 bg-primary-medium mx-auto mb-6"></div>
+        <p class="text-xl max-w-3xl mx-auto">
+            Transforming rural communities through sustainable initiatives that create lasting change.
+        </p>
+    </div>
+</section>
+
+<!-- Foundation Pillars -->
+<section class="py-16 bg-background-light">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <span class="inline-block py-1 px-3 mb-4 text-sm font-semibold tracking-wider text-primary-medium bg-primary-light bg-opacity-30 rounded-full">
+                OUR APPROACH
+            </span>
+            <h2 class="text-3xl font-bold text-primary-dark">Holistic Community Transformation</h2>
+            <div class="w-24 h-1 bg-primary-medium mx-auto mt-4"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8 mb-16">
+            <p class="text-gray-700 mb-6 leading-relaxed text-center">
+                Chepkungurwet Foundation is a grassroots organization committed to empowering women, children/youth, and families across Kenya. We focus on holistic, community-driven solutions that uplift lives and restore dignity.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+                <div class="p-5 border-l-4 border-green-500 bg-green-50 rounded-r-lg">
+                    <h3 class="font-bold text-lg text-green-800 mb-2 flex items-center">
+                        <i class="fas fa-hand-holding-usd mr-2"></i> Economic Empowerment
+                    </h3>
+                    <p class="text-green-700">
+                        Supporting income-generating activities and financial literacy for women and youth.
+                    </p>
+                </div>
+                <div class="p-5 border-l-4 border-blue-500 bg-blue-50 rounded-r-lg">
+                    <h3 class="font-bold text-lg text-blue-800 mb-2 flex items-center">
+                        <i class="fas fa-graduation-cap mr-2"></i> School Mentorship & Education
+                    </h3>
+                    <p class="text-blue-700">
+                        Promoting access to education, life skills, and mentorship for vulnerable students.
+                    </p>
+                </div>
+                <div class="p-5 border-l-4 border-purple-500 bg-purple-50 rounded-r-lg">
+                    <h3 class="font-bold text-lg text-purple-800 mb-2 flex items-center">
+                        <i class="fas fa-female mr-2"></i> Menstrual Hygiene Awareness
+                    </h3>
+                    <p class="text-purple-700">
+                        Breaking stigma through menstrual health education and pad distribution.
+                    </p>
+                </div>
+                <div class="p-5 border-l-4 border-yellow-500 bg-yellow-50 rounded-r-lg">
+                    <h3 class="font-bold text-lg text-yellow-800 mb-2 flex items-center">
+                        <i class="fas fa-home mr-2"></i> Decent Housing & Sanitation
+                    </h3>
+                    <p class="text-yellow-700">
+                        Enhancing living conditions through improved shelter and hygiene infrastructure.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-10 p-4 bg-primary-50 rounded-lg text-center">
+                <p class="text-primary-800 italic">
+                    "We believe that sustainable change begins at the community level—by equipping individuals with the tools, knowledge, and support they need to thrive."
+                </p>
+                <p class="mt-3 font-bold text-primary-700">
+                    Transforming lives. Restoring dignity.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Programs Grid -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <span class="inline-block py-1 px-3 mb-4 text-sm font-semibold tracking-wider text-primary-medium bg-primary-light bg-opacity-30 rounded-full">
+                OUR PROGRAMS
+            </span>
+            <h2 class="text-3xl font-bold text-primary-dark">Core Pillars in Action</h2>
+            <div class="w-24 h-1 bg-primary-medium mx-auto mt-4"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Program 1: Economic Empowerment -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="{% static 'images/program/empowerment.jpg' %}" alt="Economic Empowerment" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary-light text-primary-dark p-3 rounded-lg mr-4">
+                            <i class="fas fa-hand-holding-usd text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary-dark">Economic Empowerment</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Empowering women and youth with financial literacy and income-generating activities.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-medium mr-2"></i>
+                            Microfinance initiatives
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-medium mr-2"></i>
+                            Business skills training
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-medium mr-2"></i>
+                            Entrepreneurship development
+                        </li>
+                    </ul>
+                    <a href="#economic" class="text-primary-medium font-semibold hover:text-primary-dark transition-colors flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Program 2: Education & Mentorship -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="{% static 'images/program/mentorship.jpg' %}" alt="Education & Mentorship Program" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary-light text-primary-dark p-3 rounded-lg mr-4">
+                            <i class="fas fa-graduation-cap text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary-dark">Education & Mentorship</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Providing educational support and life skills mentorship for vulnerable students.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-medium mr-2"></i>
+                            Scholarship programs
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-medium mr-2"></i>
+                            Career guidance
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-medium mr-2"></i>
+                            Life skills training
+                        </li>
+                    </ul>
+                    <a href="#education" class="text-primary-medium font-semibold hover:text-primary-dark transition-colors flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Program 3: Menstrual Health -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="{% static 'images/program/menstrual_health.jpg' %}" alt="Menstrual Health Program" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary-light text-primary-dark p-3 rounded-lg mr-4">
+                            <i class="fas fa-female text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary-dark">Menstrual Health</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Breaking stigma through education and providing menstrual hygiene resources.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-medium mr-2"></i>
+                            Health education
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-medium mr-2"></i>
+                            Pad distribution
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-medium mr-2"></i>
+                            Community workshops
+                        </li>
+                    </ul>
+                    <a href="#menstrual" class="text-primary-medium font-semibold hover:text-primary-dark transition-colors flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Program 4: Housing & Sanitation -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="{% static 'images/program/housing.jpg' %}" alt="Housing & Sanitation Program" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary-light text-primary-dark p-3 rounded-lg mr-4">
+                            <i class="fas fa-home text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary-dark">Housing & Sanitation</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Improving living conditions through shelter and hygiene infrastructure.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-medium mr-2"></i>
+                            Home construction
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-medium mr-2"></i>
+                            Sanitation facilities
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-medium mr-2"></i>
+                            Hygiene education
+                        </li>
+                    </ul>
+                    <a href="#housing" class="text-primary-medium font-semibold hover:text-primary-dark transition-colors flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Program Details -->
+<section class="py-16 bg-background-light">
+    <div class="container mx-auto px-4">
+        <!-- Economic Empowerment Details -->
+        <div id="economic" class="mb-20 scroll-mt-20">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2">
+                    <img src="{% static 'images/program/empowerment.jpg' %}" alt="Economic Empowerment" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <span class="inline-block py-1 px-3 mb-4 text-sm font-semibold tracking-wider text-primary-medium bg-primary-light bg-opacity-30 rounded-full">
+                        ECONOMIC DEVELOPMENT
+                    </span>
+                    <h2 class="text-3xl font-bold text-primary-dark mb-6">Economic Empowerment Program</h2>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Our economic empowerment initiatives provide women and youth with the tools and resources needed to break the cycle of poverty. Through comprehensive training and financial support, we help community members establish sustainable businesses and gain financial independence.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 class="font-bold text-primary-dark mb-2 flex items-center">
+                                <i class="fas fa-chart-line text-primary-medium mr-2"></i>
+                                Program Impact
+                            </h4>
+                            <ul class="list-disc list-inside text-gray-700 pl-1">
+                                <li>500+ businesses started</li>
+                                <li>80% success rate</li>
+                                <li>2,000+ lives impacted</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 class="font-bold text-primary-dark mb-2 flex items-center">
+                                <i class="fas fa-calendar-check text-primary-medium mr-2"></i>
+                                Program Activities
+                            </h4>
+                            <ul class="list-disc list-inside text-gray-700 pl-1">
+                                <li>Financial literacy workshops</li>
+                                <li>Small business grants</li>
+                                <li>Entrepreneurship mentorship</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="{% url 'contact' %}" class="inline-block bg-primary-medium hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                        Support This Program
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education & Mentorship Details -->
+        <div id="education" class="mb-20 scroll-mt-20">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2 order-1 lg:order-2">
+                    <img src="{% static 'images/program/mentorship.jpg' %}" alt="Education & Mentorship Program" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="lg:w-1/2 order-2 lg:order-1">
+                    <span class="inline-block py-1 px-3 mb-4 text-sm font-semibold tracking-wider text-primary-medium bg-primary-light bg-opacity-30 rounded-full">
+                        EDUCATION
+                    </span>
+                    <h2 class="text-3xl font-bold text-primary-dark mb-6">Education & Mentorship Program</h2>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        We believe education is the foundation for sustainable development. Our program provides scholarships, mentorship, and learning resources to ensure children in rural communities can access quality education and develop essential life skills.
+                    </p>
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-primary-light text-primary-dark p-2 rounded-lg mr-4">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary-dark mb-1">Academic Support</h4>
+                                <p class="text-gray-700">Scholarships for primary, secondary, and vocational education with learning materials.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary-light text-primary-dark p-2 rounded-lg mr-4">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary-dark mb-1">Mentorship</h4>
+                                <p class="text-gray-700">Career guidance and life skills development through mentorship programs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{% url 'donate' %}" class="inline-block bg-primary-medium hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                        Sponsor a Student
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menstrual Health Details -->
+        <div id="menstrual" class="mb-20 scroll-mt-20">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2">
+                    <img src="{% static 'images/program/menstrual_health.jpg' %}" alt="Menstrual Health Program" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <span class="inline-block py-1 px-3 mb-4 text-sm font-semibold tracking-wider text-primary-medium bg-primary-light bg-opacity-30 rounded-full">
+                        HEALTH & DIGNITY
+                    </span>
+                    <h2 class="text-3xl font-bold text-primary-dark mb-6">Menstrual Health Program</h2>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Breaking the silence and stigma around menstruation, our program provides education, resources, and support to ensure girls and women can manage their periods with dignity and without interruption to their education or daily lives.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 class="font-bold text-primary-dark mb-2 flex items-center">
+                                <i class="fas fa-heart text-purple-500 mr-2"></i>
+                                Our Approach
+                            </h4>
+                            <ul class="list-disc list-inside text-gray-700 pl-1">
+                                <li>Community education</li>
+                                <li>Pad distribution drives</li>
+                                <li>Safe spaces for discussion</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 class="font-bold text-primary-dark mb-2 flex items-center">
+                                <i class="fas fa-chart-pie text-purple-500 mr-2"></i>
+                                Program Impact
+                            </h4>
+                            <ul class="list-disc list-inside text-gray-700 pl-1">
+                                <li>5,000+ girls supported</li>
+                                <li>30+ schools engaged</li>
+                                <li>95% school attendance improvement</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="{% url 'contact' %}" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                        Support Menstrual Health
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Housing & Sanitation Details -->
+        <div id="housing" class="mb-20 scroll-mt-20">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2 order-1 lg:order-2">
+                    <img src="{% static 'images/program/housing.jpg' %}" alt="Housing & Sanitation Program" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="lg:w-1/2 order-2 lg:order-1">
+                    <span class="inline-block py-1 px-3 mb-4 text-sm font-semibold tracking-wider text-primary-medium bg-primary-light bg-opacity-30 rounded-full">
+                        COMMUNITY DEVELOPMENT
+                    </span>
+                    <h2 class="text-3xl font-bold text-primary-dark mb-6">Housing & Sanitation Program</h2>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Transforming living conditions through improved shelter and hygiene infrastructure, we help families create safe, healthy homes that restore dignity and provide a foundation for thriving communities.
+                    </p>
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-primary-light text-primary-dark p-2 rounded-lg mr-4">
+                                <i class="fas fa-house-user"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary-dark mb-1">Home Improvement</h4>
+                                <p class="text-gray-700">Constructing and renovating homes for vulnerable families.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary-light text-primary-dark p-2 rounded-lg mr-4">
+                                <i class="fas fa-faucet"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary-dark mb-1">Sanitation Solutions</h4>
+                                <p class="text-gray-700">Building latrines, washing stations, and clean water access points.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{% url 'donate' %}" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                        Build with Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Impact Stories -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <span class="inline-block py-1 px-3 mb-4 text-sm font-semibold tracking-wider text-primary-medium bg-primary-light bg-opacity-30 rounded-full">
+                IMPACT STORIES
+            </span>
+            <h2 class="text-3xl font-bold text-primary-dark">Transforming Lives in Our Communities</h2>
+            <div class="w-24 h-1 bg-primary-medium mx-auto mt-4"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Story 1 -->
+            <div class="bg-background-light rounded-xl p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-user text-primary-600"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-primary-dark">Sarah's Business Journey</h4>
+                        <p class="text-gray-600 text-sm">Economic Empowerment Program</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 mb-4 italic">
+                    "With the foundation's support, I started a small grocery business that now supports my entire family."
+                </p>
+                <div class="flex items-center text-sm text-gray-500">
+                    <i class="fas fa-map-marker-alt mr-2"></i> Soi, Eldoret
+                </div>
+            </div>
+            
+            <!-- Story 2 -->
+            <div class="bg-background-light rounded-xl p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-user-graduate text-purple-600"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-primary-dark">Grace's Education</h4>
+                        <p class="text-gray-600 text-sm">Education & Mentorship Program</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 mb-4 italic">
+                    "The scholarship allowed me to finish high school and become the first in my family to attend university."
+                </p>
+                <div class="flex items-center text-sm text-gray-500">
+                    <i class="fas fa-map-marker-alt mr-2"></i> Chepkoilel, Eldoret
+                </div>
+            </div>
+            
+            <!-- Story 3 -->
+            <div class="bg-background-light rounded-xl p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-home text-yellow-600"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-primary-dark">The Omondi Family</h4>
+                        <p class="text-gray-600 text-sm">Housing & Sanitation Program</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 mb-4 italic">
+                    "Our new home has transformed our lives - we finally have a safe place to live and proper sanitation."
+                </p>
+                <div class="flex items-center text-sm text-gray-500">
+                    <i class="fas fa-map-marker-alt mr-2"></i> Juakali, Eldoret
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-16 bg-primary-dark text-white">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6">Join Our Mission of Transformation</h2>
+        <p class="text-xl mb-8 max-w-3xl mx-auto">
+            Your support helps us create sustainable change in rural communities across Kenya.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="{% url 'donate' %}" class="bg-primary-medium hover:bg-primary-light text-background-light font-bold py-3 px-8 rounded-lg transition-colors">
+                Donate Now
+            </a>
+            <a href="{% url 'contact' %}" class="bg-transparent hover:bg-primary-medium text-white font-bold py-3 px-8 border-2 border-white rounded-lg transition-colors">
+                Become a Volunteer
+            </a>
+            <a href="{% url 'contact' %}" class="bg-transparent hover:bg-primary-medium text-white font-bold py-3 px-8 border-2 border-white rounded-lg transition-colors">
+                Partner With Us
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

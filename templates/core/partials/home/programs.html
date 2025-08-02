@@ -1,0 +1,39 @@
+<section class="py-16 bg-primary-light bg-opacity-20">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-primary-dark mb-12">Our Programs</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Economic Empowerment -->
+            <div class="bg-background-light p-6 rounded-lg shadow-md hover:shadow-lg transition-all">
+                <div class="text-primary-medium text-4xl mb-4">
+                    <i class="fas fa-hand-holding-usd"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-primary-dark">Economic Empowerment</h3>
+                <p class="text-gray-700 mb-4">Programs like table banking, entrepreneurship training, and business grants to help women achieve financial independence.</p>
+                <a href="{% url 'programs' %}#economic" class="text-primary-medium font-semibold hover:text-primary-dark transition-colors">Learn more →</a>
+            </div>
+            
+            <!-- Children & Youth -->
+            <div class="bg-background-light p-6 rounded-lg shadow-md hover:shadow-lg transition-all">
+                <div class="text-primary-medium text-4xl mb-4">
+                    <i class="fas fa-child"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-primary-dark">Children & Youth</h3>
+                <p class="text-gray-700 mb-4">Mentorship, education sponsorship, talent development, and vocational training for the next generation.</p>
+                <a href="{% url 'programs' %}#youth" class="text-primary-medium font-semibold hover:text-primary-dark transition-colors">Learn more →</a>
+            </div>
+            
+            <!-- Housing & Sanitation -->
+            <div class="bg-background-light p-6 rounded-lg shadow-md hover:shadow-lg transition-all">
+                <div class="text-primary-medium text-4xl mb-4">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-primary-dark">Housing & Sanitation</h3>
+                <p class="text-gray-700 mb-4">Improving living conditions through decent housing initiatives and sanitation programs.</p>
+                <a href="{% url 'programs' %}#housing" class="text-primary-medium font-semibold hover:text-primary-dark transition-colors">Learn more →</a>
+            </div>
+        </div>
+        <div class="text-center mt-10">
+            <a href="{% url 'programs' %}" class="inline-block bg-primary-dark hover:bg-primary-medium text-white font-bold py-3 px-8 rounded-lg transition-colors">View All Programs</a>
+        </div>
+    </div>
+</section>

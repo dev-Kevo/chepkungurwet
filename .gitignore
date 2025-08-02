@@ -1,0 +1,103 @@
+# Django
+*.log
+logs/site.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# Backup files
+*.bak
+*.swp
+*~
+
+# IDE specific files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Environment files
+.env
+.env.local
+.env.dev
+.env.prod
+.env.test
+.venv/
+venv/
+ENV/
+env/
+
+# Node modules
+node_modules/
+
+# Coverage reports
+.coverage
+htmlcov/
+.coverage.*
+*.cover
+*.py,cover
+
+# Test files
+.pytest_cache/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Documentation
+docs/_build/
+
+# PyInstaller
+*.spec
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Database migrations (uncomment if you want to ignore migrations)
+# migrations/
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+*.egg
+
+# PyCharm
+.idea/
+*.iml
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# pytest
+.pytest_cache/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# SQLite (development)
+*.sqlite3
+
+# Media and static files (development)
+/media/
+/staticfiles/
+
+# Local development files
+local_settings.py
+.env.local

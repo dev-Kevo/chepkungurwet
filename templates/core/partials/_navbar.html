@@ -1,0 +1,58 @@
+{% load static %}
+
+<nav class="bg-primary-dark text-white shadow-xl sticky top-0 z-50" x-data="{ open: false }">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="{% url 'home' %}" class="text-2xl font-bold flex items-center space-x-2">
+            <img src="{% static 'images/logo.png' %}" alt="Chepkungurwet Foundation Logo" class="h-8 w-8">
+            <span>Chepkungurwet<span class="text-primary-light">Foundation</span></span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-2">
+            <a href="{% url 'about' %}" class="px-4 py-2 rounded-lg hover:bg-primary-medium hover:text-background-light transition-all duration-300 transform hover:-translate-y-0.5">About</a>
+            <a href="{% url 'programs' %}" class="px-4 py-2 rounded-lg hover:bg-primary-medium hover:text-background-light transition-all duration-300 transform hover:-translate-y-0.5">Programs</a>
+            <a href="{% url 'gallery' %}" class="px-4 py-2 rounded-lg hover:bg-primary-medium hover:text-background-light transition-all duration-300 transform hover:-translate-y-0.5">Gallery</a>
+            <a href="{% url 'contact' %}" class="px-4 py-2 rounded-lg hover:bg-primary-medium hover:text-background-light transition-all duration-300 transform hover:-translate-y-0.5">Contact</a>
+            <a href="{% url 'donate' %}" class="ml-4 bg-primary-medium hover:bg-primary-light text-background-light px-4 py-2 rounded-lg font-bold transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl flex items-center space-x-2">
+                <i class="fas fa-heart"></i>
+                <span>Donate</span>
+            </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button @click="open = !open" class="md:hidden focus:outline-none p-2 rounded-lg hover:bg-primary-medium transition-colors">
+            <i :class="open ? 'fas fa-times' : 'fas fa-bars'" class="text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div
+        x-show="open"
+        x-transition.opacity.duration.300ms
+        class="md:hidden bg-primary-medium px-4 py-2 space-y-2"
+        @click.away="open = false"
+    >
+        <a href="{% url 'about' %}" class="block py-3 px-4 rounded-lg hover:bg-primary-light hover:text-primary-dark transition-colors flex items-center space-x-2">
+            <i class="fas fa-info-circle w-6 text-center"></i>
+            <span>About</span>
+        </a>
+        <a href="{% url 'programs' %}" class="block py-3 px-4 rounded-lg hover:bg-primary-light hover:text-primary-dark transition-colors flex items-center space-x-2">
+            <i class="fas fa-project-diagram w-6 text-center"></i>
+            <span>Programs</span>
+        </a>
+        <a href="{% url 'gallery' %}" class="block py-3 px-4 rounded-lg hover:bg-primary-light hover:text-primary-dark transition-colors flex items-center space-x-2">
+            <i class="fas fa-images w-6 text-center"></i>
+            <span>Gallery</span>
+        </a>
+        <a href="{% url 'contact' %}" class="block py-3 px-4 rounded-lg hover:bg-primary-light hover:text-primary-dark transition-colors flex items-center space-x-2">
+            <i class="fas fa-envelope w-6 text-center"></i>
+            <span>Contact</span>
+        </a>
+        <a href="{% url 'donate' %}" class="block bg-primary-dark hover:bg-primary-light text-background-light px-4 py-3 rounded-lg font-bold my-2 text-center transition-colors flex items-center justify-center space-x-2">
+            <i class="fas fa-heart"></i>
+            <span>Donate Now</span>
+        </a>
+    </div>
+</nav>
+

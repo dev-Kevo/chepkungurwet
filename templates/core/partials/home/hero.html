@@ -1,0 +1,36 @@
+{% load static %}
+
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background image with overlay -->
+    <div class="absolute inset-0 z-0">
+        <img src="{% static 'images/students_in_field.jpg' %}" 
+             alt="Rural community" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-primary-dark opacity-70"></div>
+    </div>
+    
+    <!-- Content container -->
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Empowering Rural Communities</h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-primary-light">
+            Transforming lives through education, economic empowerment, and sustainable development.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="{% url 'donate' %}" 
+               class="bg-primary-medium hover:bg-primary-light text-background-light font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+                Donate Now
+            </a>
+            <a href="{% url 'programs' %}" 
+               class="bg-transparent hover:bg-primary-medium text-white font-bold py-3 px-6 border-2 border-white rounded-lg transition-all duration-300 transform hover:scale-105">
+                Our Programs
+            </a>
+        </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+        <a href="#content" class="text-white text-4xl">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </div>
+</section>

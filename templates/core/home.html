@@ -1,0 +1,25 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}Home - Chepkungurwet Foundation{% endblock %}
+
+{% block content %}
+
+<!-- Message Section -->
+{% include '_messages.html' %}
+
+<!-- Hero Section -->
+{% include 'core/partials/home/hero.html' %}
+
+<!-- About Section -->
+{% include 'core/partials/home/about.html' %}
+
+<!-- Programs Section -->
+{% include 'core/partials/home/programs.html' %}
+
+<!-- Gallery Preview -->
+{% comment %} {% include 'core/partials/home/gallery_preview.html' %} {% endcomment %}
+
+<!-- Call to Action -->
+{% include 'core/partials/home/call_to_action.html' %}
+{% endblock %}

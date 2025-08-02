@@ -1,0 +1,33 @@
+<section class="relative py-20 bg-primary-dark text-white overflow-hidden">
+    <!-- Decorative elements using existing colors -->
+    <div class="absolute top-0 left-0 w-full h-full opacity-5">
+        <div class="absolute top-20 left-10 w-32 h-32 rounded-full bg-primary-light"></div>
+        <div class="absolute bottom-10 right-10 w-40 h-40 rounded-full bg-primary-medium"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <!-- Section header -->
+        <h2 class="text-4xl font-bold mb-6">Join Us in Making a Difference</h2>
+        <div class="w-20 h-1 bg-primary-medium mx-auto mb-8"></div>
+        <p class="text-xl mb-8 max-w-3xl mx-auto">
+            Your support can help transform lives in rural communities. Whether through donations or volunteering, every contribution counts.
+        </p>
+        
+        <!-- Action buttons -->
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="{% url 'donate' %}" 
+               class="bg-primary-medium hover:bg-primary-light text-background-light font-bold py-3 px-8 rounded-lg transition-colors shadow-md hover:shadow-lg">
+               Donate Now
+            </a>
+            <a href="{% url 'contact' %}" 
+               class="bg-transparent hover:bg-primary-medium text-white font-bold py-3 px-8 border-2 border-white hover:border-primary-medium rounded-lg transition-colors shadow-md hover:shadow-lg">
+               Contact Us
+            </a>
+        </div>
+        
+        <!-- Consistent footer note -->
+        <p class="mt-8 text-primary-light text-sm">
+            <i class="fas fa-info-circle mr-2"></i> All donations directly support our community programs.
+        </p>
+    </div>
+</section>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Server Error - Chepkungurwet Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            dark: '#1a3c40',
+                            medium: '#2d7d78',
+                            light: '#e6f4f1',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        pulse: {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.5 },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e6f4f1 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+        .error-container {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .brand-gradient {
+            background: linear-gradient(135deg, #1a3c40 0%, #2d7d78 100%);
+        }
+        .error-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        .error-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(45, 125, 120, 0.2);
+        }
+        .error-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px -5px rgba(45, 125, 120, 0.3);
+        }
+        .server-animation {
+            position: relative;
+            height: 180px;
+            width: 180px;
+            margin: 0 auto;
+        }
+        .server {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e6f4f1' stroke-width='1.5'%3E%3Crect x='2' y='2' width='20' height='20' rx='2'/%3E%3Cline x1='8' y1='2' x2='8' y2='22'/%3E%3Cline x1='14' y1='2' x2='14' y2='22'/%3E%3Ccircle cx='5' cy='7' r='1' fill='%23e6f4f1'/%3E%3Ccircle cx='11' cy='12' r='1' fill='%23e6f4f1'/%3E%3Ccircle cx='17' cy='17' r='1' fill='%23e6f4f1'/%3E%3C/svg%3E") center no-repeat;
+            background-size: contain;
+        }
+        .error-pulse {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: rgba(255, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+            z-index: -1;
+        }
+        @keyframes server-shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        .shaking {
+            animation: server-shake 0.5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="p-4">
+    <div class="error-container bg-white flex flex-col lg:flex-row w-full max-w-6xl">
+        <!-- Left Panel - Branding & Technical Info -->
+        <div class="brand-gradient text-white p-8 lg:p-12 lg:w-2/5 flex flex-col justify-center">
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-8">
+                    <div class="bg-white text-primary-medium w-16 h-16 rounded-xl flex items-center justify-center mr-4">
+                        <i class="fas fa-hands-helping text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-bold">Chepkungurwet Foundation</h1>
+                        <p class="text-primary-light text-sm">Transforming Lives, Restoring Dignity</p>
+                    </div>
+                </div>
+                
+                <div class="server-animation mb-10">
+                    <div class="error-pulse"></div>
+                    <div class="server shaking"></div>
+                </div>
+                
+                <div class="mb-6">
+                    <h2 class="text-4xl font-bold mb-4">500 Error</h2>
+                    <p class="text-xl mb-4">Internal Server Error</p>
+                    <p class="text-primary-light">
+                        Our technical team has been notified and is working to resolve the issue.
+                    </p>
+                </div>
+                
+                <div class="mt-8 bg-black bg-opacity-20 p-4 rounded-lg">
+                    <h3 class="font-bold mb-2">Technical Information:</h3>
+                    <div class="text-left text-sm">
+                        <div class="flex justify-between mb-1">
+                            <span>Error Code:</span>
+                            <span>HTTP 500</span>
+                        </div>
+                        <div class="flex justify-between mb-1">
+                            <span>Time:</span>
+                            <span id="current-time">Loading...</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Reference ID:</span>
+                            <span>#{% now "U" %}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Panel - Content & Help -->
+        <div class="p-8 lg:p-12 lg:w-3/5 flex flex-col justify-center">
+            <div class="text-center mb-10">
+                <h1 class="text-5xl font-bold text-primary-medium mb-4">Internal Server Error</h1>
+                <h2 class="text-2xl font-semibold text-gray-800 mb-2">We're experiencing technical difficulties</h2>
+                <p class="text-gray-600">Our team is working to resolve the issue as quickly as possible</p>
+            </div>
+            
+            <div class="mb-8 p-6 bg-red-50 border border-red-200 text-red-700 rounded-lg">
+                <div class="flex items-start">
+                    <i class="fas fa-exclamation-triangle text-xl mr-3 mt-1"></i>
+                    <div>
+                        <h3 class="font-bold">What happened?</h3>
+                        <p class="mt-2">
+                            Our server encountered an unexpected condition that prevented it from fulfilling your request.
+                            This is not your fault, and we apologize for the inconvenience.
+                        </p>
+                        <ul class="list-disc list-inside mt-3 text-sm">
+                            <li>Our technical team has been automatically notified</li>
+                            <li>We're working to resolve the issue immediately</li>
+                            <li>Please try again in a few minutes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-10">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">In the meantime, you can:</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="/" class="error-card bg-white p-6 rounded-lg border border-gray-200 hover:border-primary-medium transition-colors">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary-light text-primary-medium w-10 h-10 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Return to Homepage</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">Go back to our main website and explore our work</p>
+                    </a>
+                    
+                    <a href="/contact" class="error-card bg-white p-6 rounded-lg border border-gray-200 hover:border-primary-medium transition-colors">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary-light text-primary-medium w-10 h-10 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Contact Support</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">Report this issue or ask for assistance</p>
+                    </a>
+                    
+                    <a href="/programs" class="error-card bg-white p-6 rounded-lg border border-gray-200 hover:border-primary-medium transition-colors">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary-light text-primary-medium w-10 h-10 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Explore Programs</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">Learn about our community empowerment initiatives</p>
+                    </a>
+                    
+                    <a href="/donate" class="error-card bg-white p-6 rounded-lg border border-gray-200 hover:border-primary-medium transition-colors">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-primary-light text-primary-medium w-10 h-10 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Support Our Mission</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">Help us continue transforming lives in communities</p>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4 text-center">Technical Support</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-center">
+                        <div class="bg-primary-light text-primary-medium w-10 h-10 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-800">Support Hotline</h4>
+                            <a href="tel:+254741317407" class="text-primary-medium hover:text-primary-dark">+254 741 317 407</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-primary-light text-primary-medium w-10 h-10 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-800">Technical Support</h4>
+                            <a href="mailto:support@chepkungurwet.org" class="text-primary-medium hover:text-primary-dark">support@chepkungurwet.org</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4 text-center">
+                    <p class="text-sm text-gray-600">
+                        Please mention reference ID: <span class="font-mono">#{% now "U" %}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set current time
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            const dateString = now.toLocaleDateString();
+            document.getElementById('current-time').textContent = `${dateString} ${timeString}`;
+        }
+        
+        // Update time every second
+        setInterval(updateTime, 1000);
+        updateTime(); // Initial call
+        
+        // Add animation to server graphic
+        document.addEventListener('DOMContentLoaded', function() {
+            const server = document.querySelector('.server');
+            
+            // Make the server shake more violently on hover
+            server.addEventListener('mouseenter', function() {
+                this.classList.add('shaking');
+            });
+            
+            server.addEventListener('mouseleave', function() {
+                this.classList.remove('shaking');
+            });
+        });
+    </script>
+</body>
+</html>

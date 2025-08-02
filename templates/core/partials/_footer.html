@@ -1,0 +1,115 @@
+<footer class="bg-primary-dark text-white pt-16 pb-8 relative overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-primary-light opacity-10"></div>
+    <div class="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-primary-medium opacity-10"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Foundation Info -->
+            <div class="space-y-6">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-primary-light text-primary-dark p-3 rounded-lg">
+                        <i class="fas fa-hands-helping text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold">Chepkungurwet Foundation</h3>
+                </div>
+                <p class="text-primary-light leading-relaxed">
+                    Empowering rural families and communities through education and capacity building.
+                </p>
+                <div class="pt-4">
+                    <h4 class="font-semibold mb-3">Subscribe to our newsletter</h4>
+                    <form class="flex" action="{% url 'letter_subscription' %}" method="post">
+                        {% csrf_token %}
+                        <input type="email" name="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-primary-dark w-full bg-amber-100">
+                        <button class="bg-primary-medium hover:bg-primary-light text-background-light px-4 py-2 rounded-r-lg transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-2xl font-bold mb-6 pb-2 border-b-2 border-primary-medium inline-block">Quick Links</h3>
+                <ul class="space-y-3">
+                    <li>
+                        <a href="{% url 'about' %}" class="text-primary-light hover:text-background-light transition-colors flex items-center group">
+                            <i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform"></i>
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'programs' %}" class="text-primary-light hover:text-background-light transition-colors flex items-center group">
+                            <i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform"></i>
+                            Our Programs
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'gallery' %}" class="text-primary-light hover:text-background-light transition-colors flex items-center group">
+                            <i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform"></i>
+                            Gallery
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'contact' %}" class="text-primary-light hover:text-background-light transition-colors flex items-center group">
+                            <i class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform"></i>
+                            Contact Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-2xl font-bold mb-6 pb-2 border-b-2 border-primary-medium inline-block">Contact Us</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <i class="fas fa-envelope mt-1 mr-3 text-primary-light"></i>
+                        <a href="mailto:info@chepkungurwet.org" class="text-primary-light hover:text-background-light transition-colors">
+                            info@chepkungurwet.org
+                        </a>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-phone mt-1 mr-3 text-primary-light"></i>
+                        <a href="tel:+254741317407" class="text-primary-light hover:text-background-light transition-colors">
+                            +254 741 317407
+                        </a>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary-light"></i>
+                        <span class="text-primary-light">
+                            Nairobi, Kenya
+                        </span>
+                    </div>
+                    
+                    <div class="pt-4">
+                        <h4 class="font-semibold mb-3">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/share/1WzxGYgKfa/?mibextid=wwXIfr" target="_blank" class="w-10 h-10 bg-primary-medium hover:bg-primary-light text-background-light rounded-full flex items-center justify-center transition-colors">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://x.com/chepkungurwetf?s=21" target="_blank" class="w-10 h-10 bg-primary-medium hover:bg-primary-light text-background-light rounded-full flex items-center justify-center transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/chepkungurwetfoundation/" target="_blank" class="w-10 h-10 bg-primary-medium hover:bg-primary-light text-background-light rounded-full flex items-center justify-center transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/company/chepkungurwet-foundation/" target="_blank" class="w-10 h-10 bg-primary-medium hover:bg-primary-light text-background-light rounded-full flex items-center justify-center transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="border-t border-primary-dark mt-12 pt-6 text-center text-primary-light">
+            <p>&copy; {% now "Y" %} Chepkungurwet Foundation. All rights reserved.</p>
+            <div class="mt-2 text-sm">
+                <a href="#" class="hover:text-background-light transition-colors">Privacy Policy</a> | 
+                <a href="#" class="hover:text-background-light transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,205 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}Gallery - Chepkungurwet Foundation{% endblock %}
+
+{% block content %}
+
+<!-- Message Section -->
+{% include '_messages.html' %}
+
+<!-- Hero Section -->
+<section class="relative py-20 bg-primary-dark text-white">
+    <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Gallery</h1>
+        <div class="w-24 h-1 bg-primary-medium mx-auto mb-6"></div>
+        <p class="text-xl max-w-3xl mx-auto">
+            Witness the transformative impact of our programs through these powerful images from the field.
+        </p>
+    </div>
+</section>
+
+<!-- Gallery Component -->
+<section 
+    x-data="{
+        activeFilter: 'all',
+        itemsToShow: 8,
+        get filteredItems() {
+            if (this.activeFilter === 'all') {
+                return [
+                    {% for image in images %}
+                    {
+                        id: {{ image.id }},
+                        title: '{{ image.title|escapejs }}',
+                        category: '{{ image.category.slug|default:"all" }}',
+                        date: '{{ image.date_taken|date:"F Y" }}',
+                        location: '{{ image.location|escapejs }}',
+                        url: '{{ image.get_absolute_url }}',
+                        imageUrl: '{{ image.image.url }}'
+                    },
+                    {% endfor %}
+                ];
+            }
+            return [
+                {% for image in images %}
+                {% if image.category %}
+                {
+                    id: {{ image.id }},
+                    title: '{{ image.title|escapejs }}',
+                    category: '{{ image.category.slug }}',
+                    date: '{{ image.date_taken|date:"F Y" }}',
+                    location: '{{ image.location|escapejs }}',
+                    url: '{{ image.get_absolute_url }}',
+                    imageUrl: '{{ image.image.url }}'
+                },
+                {% endif %}
+                {% endfor %}
+            ].filter(item => item.category === this.activeFilter);
+        }
+    }"
+    class="min-h-screen"
+>
+    <!-- Gallery Filters -->
+    <div class="py-8 bg-background-light sticky top-0 z-10 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-3">
+                <button 
+                    @click="activeFilter = 'all'"
+                    :class="{
+                        'bg-primary-medium text-white': activeFilter === 'all',
+                        'bg-primary-light text-primary-dark': activeFilter !== 'all'
+                    }"
+                    class="px-4 py-2 rounded-full font-medium transition-colors"
+                >
+                    All Photos
+                </button>
+                
+                {% for category in categories %}
+                <button 
+                    @click="activeFilter = '{{ category.slug }}'"
+                    :class="{
+                        'bg-primary-medium text-white': activeFilter === '{{ category.slug }}',
+                        'bg-primary-light text-primary-dark': activeFilter !== '{{ category.slug }}'
+                    }"
+                    class="px-4 py-2 rounded-full font-medium transition-colors flex items-center"
+                >
+                    {% if category.icon %}
+                    <i class="{{ category.icon }} mr-2"></i>
+                    {% endif %}
+                    {{ category.name }}
+                </button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Empty State -->
+            <div 
+                x-show="filteredItems.length === 0" 
+                class="text-center py-16"
+                x-cloak
+            >
+                <div class="max-w-md mx-auto">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-100 mb-6">
+                        <i class="fas fa-camera text-primary-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary-dark mb-3">No Images Found</h3>
+                    <p class="text-gray-700 mb-6">
+                        There are no gallery images matching your selected filter. 
+                        Please try another category.
+                    </p>
+                    <button 
+                        @click="activeFilter = 'all'"
+                        class="inline-block bg-primary-medium hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                    >
+                        View All Images
+                    </button>
+                </div>
+            </div>
+
+            <!-- Gallery Items -->
+            <div 
+                x-show="filteredItems.length > 0" 
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+                x-cloak
+            >
+                <template x-for="item in filteredItems.slice(0, itemsToShow)" :key="item.id">
+                    <a :href="item.url" class="gallery-item block">
+                        <div class="relative group overflow-hidden rounded-xl shadow-lg h-64">
+                            <img 
+                                :src="item.imageUrl" 
+                                :alt="item.title" 
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                            >
+                            <div class="absolute inset-0 bg-black/50 bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-end p-4">
+                                <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg" x-text="item.title"></h3>
+                                    <p class="text-primary-light text-sm" x-text="item.date"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </template>
+            </div>
+
+            <!-- Load More Button -->
+            <div 
+                class="text-center mt-12" 
+                x-show="filteredItems.length > 0 && itemsToShow < filteredItems.length"
+                x-cloak
+            >
+                <button 
+                    @click="itemsToShow += 8"
+                    class="bg-primary-medium hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-lg transition-colors"
+                >
+                    Load More Photos
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Impact Stories -->
+{% comment %} <section class="py-16 bg-background-light">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-primary-dark mb-12">Behind the Photos: Impact Stories</h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Story 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/3">
+                        <img src="{% static 'images/gallery/story-1.jpg' %}" alt="Student success story" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-xl font-bold text-primary-dark mb-2">Grace's Educational Journey</h3>
+                        <p class="text-gray-700 mb-3">Grace was able to complete her secondary education through our scholarship program and is now studying nursing at university.</p>
+                        <a href="#" class="text-primary-medium font-semibold hover:text-primary-dark transition-colors">
+                            Read Full Story <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Story 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/3">
+                        <img src="{% static 'images/gallery/story-2.jpg' %}" alt="Business success story" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-xl font-bold text-primary-dark mb-2">Mwangi's Thriving Business</h3>
+                        <p class="text-gray-700 mb-3">With our business training and seed funding, Mwangi grew his small shop into a successful wholesale business employing 5 people.</p>
+                        <a href="#" class="text-primary-medium font-semibold hover:text-primary-dark transition-colors">
+                            Read Full Story <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> {% endcomment %}
+{% endblock %}
