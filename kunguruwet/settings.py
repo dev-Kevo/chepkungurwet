@@ -49,8 +49,10 @@ INSTALLED_APPS = [
     'theme',  
 ]
 
-
-NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+if DEBUG:
+    NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+else:
+    NPM_BIN_PATH = '/usr/bin/npm'
 
 TAILWIND_APP_NAME = 'theme'
 
