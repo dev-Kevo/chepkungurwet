@@ -18,7 +18,14 @@ SECRET_KEY = 'django-insecure-dur@^9#kva%q*@-dpnu&_@8=w*_n&5mohpz=2+r7b&3%qaytd9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['chepkungurwet.org', '46.202.143.194', 'www.chepkungurwet.org', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'chepkungurwet.org', 
+    '46.202.143.194', 
+    'www.chepkungurwet.org', 
+    'localhost', 
+    '127.0.0.1', 
+    'back.transvo.online',
+]
 
 
 # Application definition
