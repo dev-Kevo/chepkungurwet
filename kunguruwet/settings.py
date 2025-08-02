@@ -171,7 +171,7 @@ STORAGES = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",  # Handles media files
     },
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",  # Handles static files
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",  # Handles static files
     },
 }
 # Default primary key field type
